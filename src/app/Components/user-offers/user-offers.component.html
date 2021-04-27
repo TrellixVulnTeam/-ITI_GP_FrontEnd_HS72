@@ -1,0 +1,57 @@
+
+
+ <div class="alert alert-primary" role="alert">
+  عــــــروض     {{message}} 
+ </div>
+
+
+<!-- *********** Offeres ******** -->
+  <section id="offers">
+    <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let offer of filteredOffersByUserId;">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="http://127.0.0.1:8000{{offer.image}}"
+              height="235px"
+            />
+            <div class="card-body">
+              <h5 class="card-title border-bottom pb-3 text-right text-warning">
+                {{offer.name}}
+                <small
+                  class="float-left d-inline-flex text-secondary"
+                  style="font-size: 13px"
+                >
+                  <i class="fa fa-clock m-1"></i>
+                    {{offer.date}}
+                </small>
+              </h5>
+              <p class="card-text text-right">
+               {{offer.description}}
+              </p>
+              <a
+              [routerLink]="['/offerdetails',offer.id]"
+                class="float-right"
+              >
+                المزيد
+                <i class="fas fa-angle-double-right" ></i>
+              </a>
+              <a class="text-success"
+             href="#"
+                class="float-left"
+              >
+                حجز الآن
+                <i class="fas fa-clipboard-check"  ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+  </section>
+  <!-- *********** /end Offeres ******** -->
+
