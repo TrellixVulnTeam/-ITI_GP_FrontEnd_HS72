@@ -1,0 +1,240 @@
+@media  (max-width: 767px)                                                /* phone & taplet */
+{
+    /************************************** Aftermaster **************************************/
+    .navbar .navbar-header #logo
+    {
+        margin-top:-30px;
+    }
+    .navbar .navbar-header #logo h1
+    {
+        font-size: 30px;
+    }
+    .navbar .navbar-header #logo b
+    {
+        font-size: 35px;
+    }
+    .navbar-right #authchatnotf #notchatcount,
+    .navbar-right #authnotf #notcount
+    {
+        top: 25px;
+    }
+    /*************** phonescreen ***************/
+    .navbar-nav .open .dropdown-menu
+    {
+        position: static;
+        float: none;
+        width: 300px;
+        box-shadow: none;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+    }
+    .navbar-nav .open .dropdown-menu li
+    {
+        padding: 10px;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover
+    {
+        color: #333;
+    }
+    /*************** /phonescreen ***************/
+    #Allcon
+    {
+        margin-top: 10px;
+    }
+    /************************************** /Aftermaster **************************************/
+    /************************************** Offers **************************************/
+    #offers
+    {
+        margin-top: 50px;
+    }
+    #offers #offer img
+    {
+        height: 240px;
+    }
+    #offers #offer .offeroption #option a
+    {
+        font-size: 12px;
+    }
+    /************************************** /Offers **************************************/
+    /************************************** /Chat **************************************/
+    /*************** Chat ***************/
+    #chatbox
+    {
+        margin-bottom: 30px;
+        margin-top: 100px;
+    }
+    #chatbox #people
+    {
+        overflow: auto;
+        padding: 8px;
+        height: 500px;
+    }
+    #chatbox #people #own
+    {
+        margin-left: -2px;
+    }
+    #chatbox #people #own img
+    {
+        width: 35px;
+        height: 35px;
+    }
+    #chatbox #people #own h3
+    {
+        color: #ffffff;
+        margin-top: 0px;
+        font-size: 20px;
+    }
+    #chatbox #people #own h5
+    {
+        color: #ffffff;
+        margin-top: -10px;
+        margin-left: 25px;
+        font-size: 12px;
+    }
+    #chatbox #people #own  i
+    {
+        font-size: 8px;
+    }
+    /**/
+    #chatbox #people #view a
+    {
+        font-size: 10px;
+    }
+    /**/
+    #chatbox #people #oneperson
+    {
+        padding: 0px;
+    }
+    #chatbox #people #oneperson img
+    {
+        width: 35px;
+        height: 35px;
+    }
+    #chatbox #people #oneperson h3
+    {
+        margin-top: 0px;
+    }
+    #chatbox #people #oneperson ul
+    {
+        margin-top: -5px;
+        min-width: 40px;
+        padding: 5px;
+    }
+    #chatbox #people #oneperson ul button
+    {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+    #chatbox #head #mesgsend,#chatbox #head #mesgrecv
+    {
+
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+    #chatbox #head #mesgsend small, #chatbox #head #mesgrecv small
+    {
+        font-size: 8px;
+    }
+    /*************** /Chat ***************/
+    /************************************** /Chat **************************************/
+}
+
+@media (min-width: 768px) and (max-width: 991px)                              /*small screen*/
+{
+    /************************************** Afteraster **************************************/
+    .navbar .navbar-header #logo
+    {
+        margin-top:-25px;
+        margin-left: -30px;
+    }
+    .navbar .navbar-header #logo h1
+    {
+        font-size: 28px;
+    }
+    .navbar .navbar-header #logo b
+    {
+        font-size: 32px;
+    }
+    .navbar-inverse .navbar-nav > li > a
+    {
+        font-size: 12px;
+        padding: 8px
+    }
+    .navbar-right
+    {
+        margin-right: -30px
+    }
+    .navbar-right #authname
+    {
+        margin: 5px;
+        margin-top: 0px;
+    }
+    .navbar-right #authname h3
+    {
+        font-size: 20px;
+    }
+    .navbar-right #auhtimg img
+    {
+        height: 40px;
+        width: 40px;
+        margin-left: 5px}
+    .navbar-right #authchatnotf #notchatcount, .navbar-right #authnotf #notcount
+    {
+        top: 5px;
+        width: 22px;
+        height: 22px;
+        font-size: 15px;
+        margin-right: -5px;
+
+    }
+    .navbar-right #authchatnotf ul
+    {
+        padding: 5px;
+    }
+    /************************************** /Afteraster **************************************/
+    /************************************** Offers **************************************/
+    #offers #offer img
+    {
+        height: 310px;
+    }
+    /************************************** /Offers **************************************/
+}
+
+@media (min-width: 992px) and (max-width: 1199px)/*medium screen*/
+{
+    /************************************** /Aftermaster **************************************/
+    .navbar .navbar-header #logo
+    {
+        margin-left: -30px;
+    }
+    .navbar-inverse .navbar-nav > li > a
+    {
+        padding: 14px;
+        font-size: 14px;
+    }
+    .navbar-right #authname
+    {
+        color: #fcfcfc;
+        margin: 10px;
+        margin-top: 5px;
+    }
+    .navbar-right #auhtimg
+    {
+        margin-top: -5px;
+    }
+    /************************************** /Aftermaster **************************************/
+    /************************************** Offers **************************************/
+    #offers #offer img
+    {
+        height: 300px;
+    }
+    /************************************** /Offers **************************************/
+}
+
+@media (min-width: 1200px)                                                     /*large screen*/
+{
+}
