@@ -1,0 +1,84 @@
+/*************** /welcome ***************/
+#Contact
+{
+    background-image: url('../../images/contactbground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin-bottom: -60px;
+}
+#Contact #contactus
+{
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: rgba(9,9,9,0.7);
+    color: #DDD;
+}
+#Contact #contactus i
+{
+    font-size: 40px;
+    color: #FFF;
+}
+#Contact #contactus .form-control
+{
+    text-indent: 10px;
+}
+#Contact #contactus .btn
+{
+    margin-bottom: 5px;
+}
+#Contact #contactus p
+{
+    margin-bottom: 40px;
+}
+#Contact #contactus textarea.input-lg
+{
+    height: 108px;
+}
+#Contact #contactus input
+{
+    border: none;
+}
+#Contact #contactus hr
+{
+    border-top: 1px solid #0F302D;
+}
+#Contact #contactus #contacinfo
+{
+    text-decoration: underline;
+    font-weight: 600;
+    padding-left: 40px;
+}
+#Contact #contactus p
+{
+    letter-spacing: 0.7px;
+}
+#Contact #contactus #info-detail
+{
+    display: block;
+    text-align: left;
+    padding-top: 10px;
+}
+#Contact #contactus #info-detail li
+{
+    font-size: 19px;
+    list-style: none;
+    color: #fff;
+}
+#Contact #contactus #info-detail i.fa
+{
+    font-size: 20px;
+    padding-right: 12px;
+    width: 30px;
+    height: 40px;
+}
+#Contact #contactus #info-detail span
+{
+    font-weight: bold;
+}
+/***************************************************/
+@media (max-width: 767px)                                                /* phone & taplet */
+{
+    .onestep{font-size: 27px;}
+}
