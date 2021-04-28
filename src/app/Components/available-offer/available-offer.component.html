@@ -1,0 +1,133 @@
+<!-- *********** start content ************ -->
+
+<section id="offers" *ngIf="authenticated">
+  <div class="container">
+    <div id="top2" class="m-5">
+      <h1>عروض المستخدمين</h1>
+      <p>
+        الآن يمكنك الحصول علي ما تريد من عروض ويمكنك أيضاً المساعدة .
+      </p>
+      <button (click)="toggle()" class="btn btn-primary">
+        إضافة عرض جديد الآن <span class="fa fa-plus-circle"></span>
+      </button>
+
+
+      <br> <br>
+
+
+
+      <form *ngIf="!flag" #myFrm="ngForm" (ngSubmit)="Add()">
+
+        <div class="form-group">
+          <!-- <label for=""> اسم العرض </label> -->
+          <input type="text" #prdName="ngModel" [(ngModel)]="newoffer.name" class="form-control" name="pName" required
+            placeholder="اﻻسم..">
+          <div class="alert alert-danger" role="alert" *ngIf="prdName.invalid &&
+             prdName.touched">
+            <p *ngIf="prdName.errors.required">اﻻسم حقل ضرورى</p>
+            <p *ngIf="prdName.errors.minlength">يجب ان لا يقل اسم عن 3 حروف</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <label for="">Description</label> -->
+          <input type="text" #prdPrice="ngModel" [(ngModel)]="newoffer.description" class="form-control" name="pPrice"
+            required placeholder="الوصف">
+          <div class="alert alert-danger" role="alert" *ngIf="prdPrice.invalid &&
+      prdPrice.touched">
+            الوصف حقل ضرورى
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <label for="">Place</label> -->
+          <input type="text" #prdQuntatity="ngModel" [(ngModel)]="newoffer.place" class="form-control" name="pQuntatity"
+            required placeholder="سجل مكانك">
+          <div class="alert alert-danger" role="alert" *ngIf="prdQuntatity.invalid &&
+      prdQuntatity.touched">
+            المكان حقل ضرورى
+          </div>
+        </div>
+        <!-- <div class="form-group">
+        <label for="">Image</label>
+        <input type="file" class="form-control" #prdDescription="ngModel" [(ngModel)]="newoffer.image" name="pDescription" rows="3"  >
+        <div class="alert alert-danger" role="alert" *ngIf="prdDescription.invalid
+      &&
+      prdDescription.touched">
+            Image is required
+        </div>
+    </div> -->
+
+
+        <select [(ngModel)]="newoffer.Cat_id" class="form-control" class="form-control search-slt" name="category" id="exampleFormControlSelect1">
+          <option selected disabled value="">-- اختر القسم --</option>
+          <option *ngFor="let cat of CategoryList" ngDefaultControl  value="{{cat.id}}" >
+            {{cat.name}}
+          </option>
+        </select>
+
+
+        <!-- <select class="btn-group" [(ngModel)]="shop.category" class="form-control">
+          <option *ngFor="let category of categories" name="category" ngDefaultControl value="{{category.id}}" (click)="lo(category.id)">{{category.name}}</option>
+        </select> -->
+
+
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled]="myFrm.invalid" (click)="addingOffer()">Save</button>
+      </form>
+
+
+
+
+    </div>
+    <!-- **** Search **** -->
+
+
+
+
+
+    <!-- **** /end Search **** -->
+
+    <!-- *********** Offeres ******** -->
+    <section id="offers" *ngIf="authenticated">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4" *ngFor="let offer of OfferList;">
+            <div class="card">
+              <img class="card-img-top" src="http://127.0.0.1:8000/media/{{offer.image}}" height="235px" />
+              <div class="card-body">
+                <h5 class="card-title border-bottom pb-3 text-right text-warning">
+                  {{offer.name}}
+                  <small class="float-left d-inline-flex text-secondary" style="font-size: 13px">
+                    <i class="fa fa-clock m-1"></i>
+                    {{offer.date}}
+                  </small>
+                </h5>
+                <p class="card-text text-right">
+                  {{offer.description}}
+                </p>
+                <a [routerLink]="['/offerdetails',offer.id]" class="float-right">
+                  المزيد
+                  <i class="fas fa-angle-double-right"></i>
+                </a>
+                <a [routerLink]="['/offerdetails',offer.id]" class="float-left"  (click)="addToNeeds(offer.id)">
+                  حجز الآن
+                  <i class="fas fa-clipboard-check"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- *********** /end Offeres ******** -->
+
+
+
+
+
+  </div>
+</section>
+
+<h1 *ngIf="!authenticated">{{message}}</h1>
+
+<!-- end content -->
