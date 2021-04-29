@@ -1,0 +1,41 @@
+    <div class="section">
+        <!-- Content -->
+        <!-- Flash Message -->
+                    <!-- /Flash Message -->
+            <!-- start content -->
+<section id="Login">
+    <div id="logining">
+        <div class="container text-center">
+            <div class="col-8 ml-auto mr-auto" id="log">
+                <h1 id="loginh">تسجيل الدخول</h1>
+                <img src="assets/images/loginlogo.jpg" class="img-circle" height="100px" width="100px" style="border-radius: 50%">
+                <p class="lead">بخطوة واحدة يمكنك الدخول</p>
+                
+
+
+
+                <main class="form-signin">
+                <form [formGroup]="form" (submit)="submit()">
+                    <h1 class="h3 mb-3 fw-normal"> من فضلك سجـــل دخولك  </h1>
+                
+                    <div class="form-floating">
+                      <input formControlName="email" type="email" class="form-control" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-floating">
+                      <input formControlName="password" type="password" class="form-control" placeholder="كلمــــــة المــــرور" required>
+                    </div>
+                
+                
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">سجـــل دخولك</button>
+                  </form>
+
+                  </main>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end content -->
+        <!-- /Content -->
+    </div>
