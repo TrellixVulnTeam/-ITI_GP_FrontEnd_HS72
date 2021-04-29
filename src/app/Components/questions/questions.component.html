@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+    <!-- Header -->
+
+    <!-- /Header -->
+    <div class="section">
+        <!-- Content -->
+        <!-- Flash Message -->
+                    <!-- /Flash Message -->
+            <!-- start content -->
+<section id="Question">
+    <div id="questioning">
+        <div class="container">
+            <div class="row col-xs-12" id="conts">
+                <div id="questions" class="text-center">
+                    <i class="fa fa-question"></i>
+                    <h1>كل الأسئلة التي قد تشغلك <bdo> ؟</bdo></h1>
+                    <div id="quest1" class="text-right">
+                        <h4>ما هو الناس للـــــناس <bdo> ؟</bdo></h4>
+                        <p>
+                            الناس للـــــناس موقع غير مربح الغرض منه مساعدة الناس لبعضهم عن طريق تقديم ما لا تحتاجه لهم  
+                        </p>
+                        <hr>
+                    </div>
+                    <div id="quest1" class="text-right">
+                        <h4>كيف يمكنني المساعدة <bdo> ؟</bdo> </h4>
+                        <p>كل ما عليك انشاء حساب وسيتم التفعيل تلقائياً وتقوم بنشر ما تريد .</p>
+                        <hr>
+                    </div>
+                    <!-- <div id="quest1" class="text-right" *ngFor="let question of QuestionList">
+                        <h4>{{ question.questions }}</h4>
+                        <p>{{ question.answer }}</p>
+                        <hr>
+                    </div> -->
+                                        </div>
+                <div id="makequestion" class="col-sm-offset-1">
+                    <!-- <form action="../question/sendquestion" method="post" enctype="multipart/form-data"> -->
+                        <!-- <input type="hidden" name="_token" value="f5I4iUNgkWlJERttB5VDcfOkglNTeV25jF7l8iyC">
+                        <input type="hidden" name="_method" value="POST"> -->
+                        <input class="input-lg  col-xs-10" [(ngModel)]="question.questions" name="question" id="quest" autocomplete="off" placeholder="ما هو سؤالك ..." required="" minlength="8" maxlength="100">
+                        <button (click)="sendQuestion()" id="sentquest" class="btn btn-success btn-lg" name="questionsubmit" >إرسال</button>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
