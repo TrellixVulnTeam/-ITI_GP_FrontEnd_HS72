@@ -1,0 +1,89 @@
+    <!-- **************  Header *********************** -->
+    <!-- **** Nav ***** -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+
+      <a class="navbar-brand" [routerLink]="['/afterlogin']" id="logo" style="padding: 0">
+          <img src="assets/images/logoo5.png" height="50px">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" *ngIf="!authenticated">
+              <li class="nav-item active">
+                  <a class="nav-link"  [routerLink] ="['/home']" > الرئيسية </a>
+              </li>
+              <li class="nav-item ">
+                  <a   [routerLink] = "['/contactus']" class="hvr-hang nav-link"> اتصل بنا </a>
+              </li>
+              <li class="nav-item ">
+                  <a [routerLink]="['/questions']" class="hvr-hang nav-link"> الأسئلة المتكررة </a>
+              </li>
+              <li class="nav-item ">
+                  <a  [routerLink]="['/reviews']" class="hvr-hang nav-link"> أراء المستخدمين </a>
+              </li>
+              <li class="nav-item ">
+                  <a   [routerLink]="['/aboutus']" class="hvr-hang nav-link"> من نحن
+                  </a>
+              </li>
+
+
+              <form class="form-inline my-2 my-lg-0" style="margin-left: 50px">
+              <a [routerLink]="['/login']" class="btn btn-success" (click)="handleLogin()">دخول</a>
+              <a [routerLink]="['/register']" class="btn btn-info mr-2">تسجيل</a>
+          </form>
+
+
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0" style="margin-left: 50px" *ngIf="!authenticated">
+              <a [routerLink]="['/login']" class="btn btn-success">دخول</a>
+              <a [routerLink]="['/register']" class="btn btn-info mr-2">تسجيل</a>
+          </form> -->
+
+
+          <ul class="navbar-nav mr-auto" *ngIf="authenticated">
+            <li class="nav-item active">
+                <a class="hvr-hang nav-link" [routerLink]="['/afterlogin']">
+                    <i class="fa fa-user-circle"></i> {{message}} </a>
+            </li>
+            <li class="nav-item ">
+                <a   class="hvr-hang nav-link" [routerLink]="['/availableoffer']">
+                    <i class="fa fa-hand-holding-heart"></i>  كـــل العروض  </a>
+            </li>
+
+            <li class="nav-item " >
+                <a    class="hvr-hang nav-link" [routerLink]="['/useroffer']">
+                    <i class="fa fa-handshake"></i>  عــــروضى  </a> 
+            </li>
+
+            <li class="nav-item ">
+                <a   class="hvr-hang nav-link" [routerLink]="['/userneed']">
+                    <i class="fa fa-hand-holding-heart"></i>  طلباتــى  </a>
+            </li>
+
+            <form class="form-inline my-2 my-lg-0" style="margin-left: 50px">
+                <a [routerLink]="['/login']" class="btn btn-info mr-2" (click)="logout()">تسجيل الخروج</a>
+            </form>
+
+        </ul>
+
+
+          <!-- <form class="form-inline my-2 my-lg-0" style="margin-left: 50px" *ngIf="authenticated">
+            <a [routerLink]="['/login']" class="btn btn-info mr-2" (click)="logout()">تسجيل الخروج</a>
+        </form> -->
+
+
+          <form class="form-inline my-2 my-lg-0 searching" action="html/offers/offerssearch" method="GET">
+              <input class="form-control mr-sm-2" type="search" placeholder="عن ماذا تبحث.." name="name" aria-label="Search">
+              <button class="btn btn-warning" type="submit">
+                  <i class="fa fa-search text-white"></i>
+              </button>
+          </form>
+      </div>
+
+  </nav>
+  <!-- **** /end Nav ***** -->
+  <!--************************** /end Header ***************-->
+
