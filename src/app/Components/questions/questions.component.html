@@ -1,15 +1,4 @@
-
-
-
-
-
-
-
-
-    <!-- Header -->
-
-    <!-- /Header -->
-    <div class="section">
+<div class="section">
         <!-- Content -->
         <!-- Flash Message -->
                     <!-- /Flash Message -->
@@ -43,11 +32,12 @@
                     <!-- <form action="../question/sendquestion" method="post" enctype="multipart/form-data"> -->
                         <!-- <input type="hidden" name="_token" value="f5I4iUNgkWlJERttB5VDcfOkglNTeV25jF7l8iyC">
                         <input type="hidden" name="_method" value="POST"> -->
-                        <input class="input-lg  col-xs-10" [(ngModel)]="question.questions" name="question" id="quest" autocomplete="off" placeholder="ما هو سؤالك ..." required="" minlength="8" maxlength="100">
-                        <button (click)="sendQuestion()" id="sentquest" class="btn btn-success btn-lg" name="questionsubmit" >إرسال</button>
+                        <input class="input-lg  col-xs-10 border border-info" [(ngModel)]="question.questions" name="question" id="quest" autocomplete="off" placeholder="ما هو سؤالك ..." required="" minlength="8" maxlength="100">
+                        <button (click)="sendQuestion()" id="sentquest" class="btn btn-info btn-lg" name="questionsubmit" >إرسال</button>
                     <!-- </form> -->
                 </div>
             </div>
         </div>
     </div>
 </section>
+

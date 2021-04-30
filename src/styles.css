@@ -330,8 +330,8 @@ body
 #Question #conts
 {
     padding: 40px;
-    background-color: rgba(99, 99, 99, 0.9);
-    color: #FFFFFF;
+    /* background-color: rgba(99, 99, 99, 0.9); */
+    color: #161515;
 }
 #Question #questioning h4
 {
@@ -343,70 +343,13 @@ body
 }
 #Question #questioning p,ol,h5
 {
-    color: #D3CC9E;
+    color: #04567c;
     font-size: 17px;
 }
 #Question #questioning i
 {
     font-size: 40px;
-    color: #FFF;
-}
-#Question #questioning #makequestion
-{
-    margin-top: 50px;
-    width: 100%;
-}
-#Question #questioning #makequestion #quest
-{
-    border: none;
-    border-radius: 0  5px  5px 0 ;
-    color: #0E2231;
-    width: 80%;
-    text-indent: 5px;
-    float: right;
-    padding: 14px;
-}
-#Question #questioning #makequestion #sentquest
-{
-    border: none;
-    padding: 11px;
-    width: 15%;
-    border-radius:  5px 0 0 5px;
-    float: right;
-}
-/*******************/
-#Question
-{
-    /* background-image: url('../../images/questionbground.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 20px;
-}
-#Question #conts
-{
-    padding: 40px;
-    background-color: rgba(99, 99, 99, 0.9);
-    color: #FFFFFF;
-}
-#Question #questioning h4
-{
-    color: #0B0038;
-}
-#Question #questioning #questions
-{
-    width: 100%;
-}
-#Question #questioning p,ol,h5
-{
-    color: #D3CC9E;
-    font-size: 17px;
-}
-#Question #questioning i
-{
-    font-size: 40px;
-    color: #FFF;
+    color: rgb(19, 108, 143);
 }
 #Question #questioning #makequestion
 {
