@@ -168,11 +168,11 @@
                     <i class="fas fa-angle-double-right"></i>
                   </a>
 
-                  <a [routerLink]="['/offerdetails',offer.id]" class="float-left" (click)="addToNeeds(offer.id)">
+                  <a *ngIf="offer.id != 30 && offer.id!=37 && offer.id != 32 && offer.id!=31 && offer.id!=48 && offer.id!=34 && offer.id!=53" [routerLink]="['/availableoffer']" class="float-left" (click)="addToNeeds(offer.id)">
                     حجز الآن
                     <i class="fas fa-clipboard-check"></i>
                   </a>
-                  <p *ngIf="checkIFTaked" class="float-left" style="color: red;">
+                  <p *ngIf="offer.id == 30 || offer.id==37 || offer.id == 32 || offer.id==31 || offer.id==48 || offer.id==34 || offer.id==53" class="float-left" style=" background-color: rgb(230, 109, 109);">
                     محجــــوزة بالفعل
                     <i class="fas fa-clipboard-check"></i>
                   </p>
