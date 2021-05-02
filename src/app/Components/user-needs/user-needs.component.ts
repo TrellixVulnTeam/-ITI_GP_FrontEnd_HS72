@@ -79,12 +79,13 @@ export class UserNeedsComponent implements OnInit {
 
   // here we need to send id dynamically not static , but static is working fine
   // we need to get need_id related to offer_id that clicked by user
-  need_id = 8;
+  need_id ;
   returnOffer(id) {
     this.service.getNeedbyOfferId(id).subscribe(
       (res:any) => {
         console.log("result Id:-------",id);
         this.need_id = res[0].id;
+        
         console.log("this.need_id" , this.need_id)
 
         console.log("need result:-------",res);
@@ -100,5 +101,9 @@ export class UserNeedsComponent implements OnInit {
         console.log(err);
       }
     );
+    // alert('تــــم الغاء الحجـــز بنجــاح')
   }
+
+
+
 }
