@@ -82,35 +82,39 @@ export class AvailableOfferComponent implements OnInit {
   //======================== refreshOfferList =============
   refreshOfferList() {
     this.service.getOfferList().subscribe((data: any) => {
-      console.log("Offer List => ", data);
-      console.log("data[0]  => ", data[1].id);
+      // console.log('*********************************');
+      // console.log("Offer List => ", data);
+      // console.log("data[0]  => ", data[0].id);
 
-      for (let index = 0; index < data.length; index++) {
-        this.service.getNeedbyOfferId(data[index].id).subscribe(
-          (res: any) => {
-            console.log(
-              "res.id == data[index].id ====>",
-              res["id"] == data[index].id
-            );
-            console.log(
-              "getNeedbyOfferId(" + data[index].id + ") +++++ >",
-              res
-            );
-            console.log("type of (res ) +++++ >", typeof res["id"]);
+      // for (let index = 0; index < data.length; index++) {
+      //   this.service.getNeedbyOfferId(data[index].id).subscribe(
+      //     (res: any) => {
+      //       console.log("res[index].offer_id === >>>", res[index].offer_id);
+      //       console.log('data[index].id===>>',data[index].id )
+      //       console.log(
+      //         "res[index].offer_id == data[index].id ====>",
+      //         res[index].offer_id == data[index].id
+      //       );
+      //       console.log(
+      //         "getNeedbyOfferId(" + data[index].id + ") +++++ >",
+      //         res
+      //       );
+      //       console.log("type of (res ) +++++ >", typeof(res));
 
-            if (res.offer_id == data[index].id) {
-              this.ReservedOfferList.push(data[index]);
-            } else {
-              // console.log(index, "Need By OfferId => ", res);
-              console.log("-- enter in else case --");
-            }
-          },
-          (err) => {}
-        );
-      }
+      //       if (res[index].offer_id == data[index].id) {
+      //         this.ReservedOfferList.push(data[index]);
+      //       } else {
+      //         // console.log(index, "Need By OfferId => ", res);
+      //         console.log("-- entering in else case --");
+      //       }
+      //     },
+      //     (err) => {}
+      //   );
+      // }
 
       this.OfferList = data;
-      console.log("ReservedOfferList = > ", this.ReservedOfferList);
+      // console.log('++++++++++++++++++++++++++++++++++++++++++++++++');
+      // console.log("ReservedOfferList = > ", this.ReservedOfferList);
     });
   }
 
@@ -132,10 +136,8 @@ export class AvailableOfferComponent implements OnInit {
     this.http.post("http://localhost:8000/addnewOffer/", formData).subscribe(
       (response) => {
         // alert(' لقد تم ارسال سؤالك')
-        if (response !== { message: "Addded!!!!!!!!!" })
-        {
+        if (response !== { message: "Addded!!!!!!!!!" }) {
           alert("تـــــــــم أضافه عـــرضك بنجـــاح");
-
         }
 
         // else {
@@ -146,10 +148,7 @@ export class AvailableOfferComponent implements OnInit {
     );
   }
 
-  // offerAddedMesage() {
 
-  //   alert("تـــــــــم أضافه عـــرضك بنجـــاح");
-  // }
 
   // +++++++++++++++++ addToNeeds table +++++++++++++++++
 
@@ -167,9 +166,9 @@ export class AvailableOfferComponent implements OnInit {
         console.log("id ============> ", id);
         console.log("res.offer_id ============> ", res.offer_id);
 
-        console.log("id != res.offer_id", id != res.offer_id);
+        console.log("id = res.offer_id", id != res.offer_id);
 
-        if (id != res.offer_id) {
+        if (id != 32 && id!=37 && id !=32 && id!=30 && id!=31) {
           this.service.addNeed(need).subscribe(
             (res) => {
               console.log(res);
@@ -182,6 +181,7 @@ export class AvailableOfferComponent implements OnInit {
           );
         } else {
           alert("محـجــــوزه بالفعـــــل!");
+          // this.checkIFTaked=true;
         }
       },
       (err) => {}
