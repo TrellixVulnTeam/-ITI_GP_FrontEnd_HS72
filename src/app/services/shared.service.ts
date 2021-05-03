@@ -122,8 +122,8 @@ return this.http.delete(this.APIUrl + 'offer/'+val);
 }
 
 
-getAllOfferNames():Observable<any[]>{
-  return this.http.get<any[]>(this.APIUrl+'offer');
+searchAboutOffer(name:any):Observable<any[]>{
+  return this.http.get<any[]>(this.APIUrl+'offerSearch/'+name);
 }
 
 
