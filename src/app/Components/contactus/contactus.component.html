@@ -1,4 +1,12 @@
 
+
+
+
+
+    <!-- Header -->
+
+    <!-- /Header -->
+
     <div class="section">
         <!-- Content -->
         <!-- Flash Message -->
@@ -8,7 +16,7 @@
     <div id="contactus">
         <div class="container">
             <i class="fa fa-eye-slash"></i>
-            <h1 class="text-info">اتصل بنا </h1>
+            <h1 class="text-success">اتصل بنا </h1>
             <p class="lead">نحن في إنتظار مقترحاتكم لتقديم أفضل ما لدينا .</p>
             <!-- <form action=" contact_us/message" method="post" enctype="multipart/form-data"> -->
                 <!-- <input type="hidden" name="_token" value="f5I4iUNgkWlJERttB5VDcfOkglNTeV25jF7l8iyC">
@@ -21,20 +29,20 @@
                         <div id="info-detail" class="text-right">
                             <ul>
                                 <li>
-                                    <i class="fa fa-calendar text-black"></i>
+                                    <i class="fa fa-calendar"></i>
                                     <span> يومياً :</span> 09:00 ص ل 10:00 م
                                 </li>
                                 <li>
-                                    <i class="fa fa-map-marker-alt text-black"></i>
+                                    <i class="fa fa-map-marker-alt"></i>
                                     <span> العنوان :</span> قنا , شارع المحطة
                                 </li>
                                 <li>
                                     <i class="fa fa-mobile-alt"></i>
-                                    <span> الهاتف :</span> <a href="tel:+2001063981560" class="text-body">200106398160+</a>
+                                    <span> الهاتف :</span> <a href="tel:+2001063981560" class="text-white">200106398160+</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>
-                                    <span> البريد :</span> <a href="P4p2020@gmail.com" class="text-body">P4p2020@gmail.com</a>
+                                    <span> البريد :</span> <a href="salfny2020@gmail.com" class="text-white">salfny2020@gmail.com</a>
                                 </li>
                             </ul>
                         </div>
@@ -43,16 +51,16 @@
                         <h2>إرسل لنا رسالة</h2>
                         <hr>
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="contact.name" class="form-control input-lg border border-secondary " value="" name="contactuser" placeholder="ادخل الإسم ..." autocomplete="">
+                            <input type="text" [(ngModel)]="contact.name" class="form-control input-lg" value="" name="contactuser" placeholder="ادخل الإسم ..." autocomplete="">
+                                                           </div>
+                        <div class="form-group">
+                            <input type="email" [(ngModel)]="contact.email" class="form-control input-lg" value="" name="contactmail" placeholder="ادخل البريد..." autocomplete="email">
                                                             </div>
                         <div class="form-group">
-                            <input type="email" [(ngModel)]="contact.email" class="form-control input-lg border border-secondary" value="" name="contactmail" placeholder="ادخل البريد..." autocomplete="email">
+                            <input type="tel" [(ngModel)]="contact.phone" class="form-control input-lg" value="" name="contactphone" placeholder="ادخل الهاتف...." autocomplete="phone">
                                                             </div>
                         <div class="form-group">
-                            <input type="tel" [(ngModel)]="contact.phone" class="form-control input-lg border border-secondary" value="" name="contactphone" placeholder="ادخل الهاتف...." autocomplete="phone">
-                                                            </div>
-                        <div class="form-group">
-                            <textarea [(ngModel)]="contact.message" class="form-control input-lg border border-secondary" value="" name="contactmessage" placeholder="اكتب رسالتك ..."></textarea>
+                            <textarea [(ngModel)]="contact.message" class="form-control input-lg" value="" name="contactmessage" placeholder="اكتب رسالتك ..."></textarea>
                                                         </div>
                         <div class="row">
                             <button (click)="sendContact()" class="btn btn-info btn-lg col-5 mr-4" name="contactsubmit" >إرسال</button>
@@ -74,7 +82,6 @@
         <!-- /Content -->
     </div>
     <!-- Footer -->
-
 
 
 

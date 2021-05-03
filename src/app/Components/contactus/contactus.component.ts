@@ -35,18 +35,15 @@ export class ContactusComponent implements OnInit {
 
   sendContact() {
     this.service.addContact(this.contact).subscribe(
-      (response) => {
-        if(response == "Added SuccessFully!!"){
-          alert(" لقد تم ارسال رسالتك");
-        }
-        else{
-        alert("لم يتم اﻻرســـال");
-        }
+      response => {
+        alert(' لقد تم ارسال رسالتك')
       },
-      (error) => {
-        console.log("error", error);
-        alert(error);
-      }
-    );
-  }
+      error => console.log('error', error)
+      );
+
+ }
+
+
+
+
 }
