@@ -7,6 +7,7 @@ import { AvailableOfferComponent } from './Components/available-offer/available-
 import { ContactusComponent } from './Components/contactus/contactus.component';//ContactusComponent
 import { HomeComponent } from './Components/home/home.component'; //HomeComponent
 import { LoginComponent } from './Components/login/login.component';//LoginComponent
+import { NewfeedsComponent } from './Components/newfeeds/newfeeds.component';
 import { OfferDetailComponent } from './Components/offers/offer-detail/offer-detail.component';
 import { QuestionsComponent } from './Components/questions/questions.component';//QuestionsComponent
 import { RegisterComponent } from './Components/register/register.component';
@@ -23,10 +24,12 @@ const routes: Routes = [
   {path:'login' ,  component:LoginComponent},
   {path:'register'  , component:RegisterComponent},
   {path:'offerdetails/:id'  , component:OfferDetailComponent},
-  {path:'afterlogin'  , component:AfterloginComponent, canActivate: [AuthGuard]},
+  {path:'afterlogin'  , component:AfterloginComponent},
   {path:'availableoffer'  , component:AvailableOfferComponent},
   {path:'useroffer'  , component:UserOffersComponent},
   {path:'userneed'  , component: UserNeedsComponent},
+  {path:'searchOffer'  , component: NewfeedsComponent},
+
 
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'**',redirectTo:'/home',pathMatch:'full'}

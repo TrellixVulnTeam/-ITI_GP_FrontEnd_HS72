@@ -22,8 +22,12 @@ export class OfferDetailComponent implements OnInit {
   ngOnInit(): void {
     let id = this._activedRoute.snapshot.params["id"];
     this.service.getOfferById(id).subscribe((res) => {
+      this.getCatName(res.Cat_id);
       this.offer = res;
-      console.log(this.offer);
+      this.getUsername(res.user_id); 
+
+      console.log("this.offer", this.offer);
+
 
 
       // we need to retrive user which user_id in offer class = userid in user class
@@ -32,7 +36,7 @@ export class OfferDetailComponent implements OnInit {
         .get("http://127.0.0.1:8000/api/user/", { withCredentials: true })
         .subscribe(
           (res: any) => {
-            // console.log(res);
+            // console.log("gggggggggggggggggggg",res);
 
             this.message = `  صاحب العرض : ${res.name}`;
             Emitters.authEmitter.emit(true);
@@ -45,5 +49,28 @@ export class OfferDetailComponent implements OnInit {
           }
         );
     });
+  }
+  catName;
+  username;
+  getCatName(id) {
+    this.service.getCatById(id).subscribe(
+      (res: any) => {
+        console.log("resssssssssssssssssssss", res);
+        this.catName = res.name;
+        console.log(" this.catName", this.catName);
+      },
+      (err) => {
+        console.log("ErrOOOoooooooooooooooooooooor");
+      }
+    );
+  }
+  getUsername(id) {
+    this.service.getUserById(id).subscribe(
+      (res:any) => {
+        console.log("&&&&&&&&&&&&&&&&&&" , res)
+        this.username = res.name;
+      },
+      (err) => {}
+    );
   }
 }

@@ -6,6 +6,7 @@ import { ICateogries } from '../interfaces/icateogries';
 import { INeed } from '../interfaces/ineed';
 import { IQuestion } from '../interfaces/iquestion';
 import { IContact } from '../interfaces/icontact';
+import { IUser } from '../interfaces/iuser';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,17 @@ getOfferByID(offerId):IOffer{
 getCatList():Observable<ICateogries[]>{
   return this.http.get<ICateogries[]>(this.APIUrl + 'category/');
 }
+
+getCatById(id):Observable<ICateogries[]>{
+  return this.http.get<ICateogries[]>(this.APIUrl + 'categoryById/'+id);
+}
+
+
+getUserById(id):Observable<IUser[]>{
+  return this.http.get<IUser[]>(this.APIUrl + 'api/userById/'+id);
+}
+
+
 
 // Post Category
 addCategory(val:any){
@@ -110,8 +122,8 @@ return this.http.delete(this.APIUrl + 'offer/'+val);
 }
 
 
-getAllOfferNames():Observable<any[]>{
-  return this.http.get<any[]>(this.APIUrl+'offer');
+searchAboutOffer(name:any):Observable<any[]>{
+  return this.http.get<any[]>(this.APIUrl+'offerSearch/'+name);
 }
 
 
@@ -144,6 +156,11 @@ getAllNeedNames():Observable<any[]>{
 
 getNeedbyUserId(userId:number):Observable<IOffer[]>{
   return this.http.get<IOffer[]>(this.APIUrl + 'needByUserId/'+userId);
+}
+
+
+getNeedbyOfferId(offerId:number):Observable<IOffer[]>{
+  return this.http.get<IOffer[]>(this.APIUrl + 'needByOfferId/'+offerId);
 }
 
 //************************** Questions API ************** */ */

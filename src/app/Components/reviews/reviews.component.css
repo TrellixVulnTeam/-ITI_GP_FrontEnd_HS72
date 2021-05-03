@@ -1,0 +1,92 @@
+
+ /***********************Start Global****************/
+
+
+/*********************** [Header] ****************/
+/* header */
+
+
+/*===========logo======= */
+
+
+/* div.copyrights{ */
+    /* height: 10rem;
+    padding: 20px;
+    background-color:#545A79  ;
+    color: white; */
+    /* text-align: center; */
+    /* display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y: auto; */
+    
+/* } */
+
+/* div.social-media img{
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+} */
+/* div.social-media img:hover{
+    cursor: pointer;
+    transform: scale(1.2,1.2);
+}
+span:hover{
+font:bolder 1rem tahoma;
+cursor: pointer;
+} */
+/* **************************** */
+
+
+#top2
+{
+    text-align: center;
+}
+#top2 h1
+{
+    color: #ff9f1c;
+    font-size:27px;
+    /* margin: 0 auto; */
+}
+#top2 p
+{
+    color: #6d9093;
+    font-size: 20px;
+    margin: 0px;
+    font-family: tahoma;
+}
+/*#center2
+{
+    margin-top: 80px;
+    float: left;
+    padding: 10px;
+}*/
+#user1,#user2,#user3,#user4,#user5,#user6,#user7,#user8,#user9
+{
+    width: 300px;
+    height: 200px;
+    color: #6d9093;
+    font-size: 20px;
+    box-shadow: 4px 4px 4px #ccc,-4px -4px 4px #ccc;
+    padding: 30px;
+    margin: 40px;
+    margin-bottom: 80px;
+}
+#user1:hover,#user2:hover,#user3:hover,#user4:hover,#user5:hover,#user6:hover,#user7:hover,#user8:hover,#user9:hover
+{
+    width: 305px;
+    color: #ff9f1c;
+    box-shadow: 3px 3px 3px #FFC682,-3px -3px 3px #FFC682;
+    cursor: pointer;
+    margin-left: 38px;
+}
+#user1 img,#user2 img,#user3 img,#user4 img,#user5 img,#user6 img,#user7 img,#user8 img,#user9 img
+{
+    margin-left: px;
+    margin-top: -15px;
+    border-radius: 40px;
+}
+#p1,#p2,#p3,#p4,#p5,#p6
+{
+    float: left;
+}
