@@ -12,7 +12,7 @@ body
     margin-bottom: 4px;
     border-bottom: 3px solid #E26172;
 }
-.navbar  #logo h1
+.navbar  #logo 
 {
     font-size: 40px;
     color: #FF9000;
@@ -41,7 +41,7 @@ body
 .navbar .dropdown-menu
 {
     right: 0;
-    text-align: right;
+    text-align: left;
 }
 /*************** /navbar ***************/
 /*************** footer ***************/
@@ -148,7 +148,7 @@ body
 {
     width: 40px;
     height: 40px;
-    background-color: #96701E;
+    background-color:green;
     color: #E0E0E0;
     text-align: center;
     font-size: 24px;
@@ -164,7 +164,7 @@ body
 #scrolltop:hover
 {
     color: #FFF;
-    background-color: #D69411;
+    background-color: green;
     cursor: pointer;
     transition: all .5s ease 0s;
     -webkit-transition: all .5s ease 0s;

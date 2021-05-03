@@ -1,8 +1,24 @@
 <!-- *********** start content ************ -->
+<br>
+<!-- ************* Search ******** -->
+<form class="form-inline my-2 my-lg-0 searching" (ngSubmit)="search(offername.value)">
+  <input #offername class="form-control mr-sm-2 ml-1" type="search" placeholder="عن ماذا تبحث.." name="name"
+    aria-label="Search">
+  <button class="btn btn-warning" type="submit">
+
+    <i class="fa fa-search text-white"></i>
+
+  </button>
+
+
+</form>
+
+<!-- ************* /End Search ******** -->
+
 
 <section id="offers" *ngIf="authenticated">
-  <div class="container">
-    <div id="top2" class="m-5">
+  <div class="container" >
+    <div id="top2" *ngIf="!flag2" class="m-5">
       <h1>عروض المستخدمين</h1>
       <p>
         الآن يمكنك الحصول علي ما تريد من عروض ويمكنك أيضاً المساعدة .
@@ -16,7 +32,7 @@
 
 
 
-      <form *ngIf="!flag" #myFrm="ngForm" (ngSubmit)="Add()">
+      <form *ngIf="!flag" #myFrm="ngForm" (ngSubmit)="addingOffer()">
 
         <div class="form-group">
           <!-- <label for=""> اسم العرض </label> -->
@@ -46,26 +62,40 @@
             المكان حقل ضرورى
           </div>
         </div>
-        <!-- <div class="form-group">
-        <label for="">Image</label>
-        <input type="file" class="form-control" #prdDescription="ngModel" [(ngModel)]="newoffer.image" name="pDescription" rows="3"  >
-        <div class="alert alert-danger" role="alert" *ngIf="prdDescription.invalid
+        <div class="form-group">
+          <!-- <label for="">Place</label> -->
+          <input type="text" #prdQuntatity="ngModel" [(ngModel)]="newoffer.phone" class="form-control" name="pQuntatity"
+            required placeholder="سجل  رقـــم هاتفك">
+          <div class="alert alert-danger" role="alert" *ngIf="prdQuntatity.invalid &&
+      prdQuntatity.touched">
+            رقـــم الهاتف حقل ضرورى
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <label for="">Image</label> -->
+          <input type="file" (change)="func($event)" class="form-control" #prdDescription="ngModel"
+            [(ngModel)]="newoffer.image" name="pDescription" rows="3">
+          <div class="alert alert-danger" role="alert" *ngIf="prdDescription.invalid
       &&
       prdDescription.touched">
             Image is required
+          </div>
         </div>
-    </div> -->
 
 
-        <select [(ngModel)]="catID" class="form-control" class="form-control search-slt" name="category" id="exampleFormControlSelect1">
+        <select [(ngModel)]="newoffer.Cat_id" class="form-control" class="form-control search-slt" name="category"
+          id="exampleFormControlSelect1">
           <option selected disabled value="">-- اختر القسم --</option>
-          <option *ngFor="let cat of CategoryList" [value]="cat.id" [(ngMode)]="newoffer.Cat_id">
+          <option *ngFor="let cat of CategoryList" ngDefaultControl value="{{cat.id}}">
             {{cat.name}}
           </option>
         </select>
 
+
+
         <br>
-        <button type="submit" class="btn btn-primary" [disabled]="myFrm.invalid">Save</button>
+        <button type="submit" class="btn btn-primary" [disabled]="myFrm.invalid"
+          >Save</button>
       </form>
 
 
@@ -84,31 +114,78 @@
     <section id="offers" *ngIf="authenticated">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 mb-4" *ngFor="let offer of OfferList;">
-            <div class="card">
-              <img class="card-img-top" src="http://127.0.0.1:8000{{offer.image}}" height="235px" />
-              <div class="card-body">
-                <h5 class="card-title border-bottom pb-3 text-right text-warning">
-                  {{offer.name}}
-                  <small class="float-left d-inline-flex text-secondary" style="font-size: 13px">
-                    <i class="fa fa-clock m-1"></i>
-                    {{offer.date}}
-                  </small>
-                </h5>
-                <p class="card-text text-right">
-                  {{offer.description}}
-                </p>
-                <a [routerLink]="['/offerdetails',offer.id]" class="float-right">
-                  المزيد
-                  <i class="fas fa-angle-double-right"></i>
-                </a>
-                <a  class="float-left btn" (click)="fun()" >
-                  حجز الآن
-                  <i class="fas fa-clipboard-check"></i>
-                </a>
+
+          <div class="row" *ngIf="flag2">
+            <div class="col-md-4 mb-4" *ngFor="let offer of srearchedList;">
+              <div class="card">
+                <img class="card-img-top" src="http://127.0.0.1:8000{{offer.image}}" height="235px" />
+                <div class="card-body">
+                  <h5 class="card-title border-bottom pb-3 text-right text-warning">
+                    {{offer.name}}
+                    <small class="float-left d-inline-flex text-secondary" style="font-size: 13px">
+                      <i class="fa fa-clock m-1"></i>
+                      {{offer.date}}
+                    </small>
+                  </h5>
+                  <p class="card-text text-right">
+                    {{offer.description}}
+                  </p>
+                  <a [routerLink]="['/offerdetails',offer.id]" class="float-right">
+                    المزيد
+                    <i class="fas fa-angle-double-right"></i>
+                  </a>
+
+                  <a [routerLink]="['/offerdetails',offer.id]" class="float-left" (click)="addToNeeds(offer.id)">
+                    حجز الآن
+                    <i class="fas fa-clipboard-check"></i>
+                  </a>
+                  <p *ngIf="checkIFTaked" class="float-left" style="background-color: red;">
+                    محجــــوزة بالفعل
+                    <i class="fas fa-clipboard-check"></i>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+
+          <div  class="row" *ngIf="!flag2">
+            <div class="col-md-4 mb-4" *ngFor="let offer of OfferList;">
+              <div class="card">
+                <img class="card-img-top" src="http://127.0.0.1:8000{{offer.image}}" height="235px" />
+                <div class="card-body">
+                  <h5 class="card-title border-bottom pb-3 text-right text-warning">
+                    {{offer.name}}
+                    <small class="float-left d-inline-flex text-secondary" style="font-size: 13px">
+                      <i class="fa fa-clock m-1"></i>
+                      {{offer.date}}
+                    </small>
+                  </h5>
+                  <p class="card-text text-right">
+                    {{offer.description}}
+                  </p>
+                  <a [routerLink]="['/offerdetails',offer.id]" class="float-right">
+                    المزيد
+                    <i class="fas fa-angle-double-right"></i>
+                  </a>
+
+                  <a *ngIf="offer.id != 30 && offer.id!=37 && offer.id != 32 && offer.id!=31 && offer.id!=48 && offer.id!=34 && offer.id!=53" [routerLink]="['/availableoffer']" class="float-left" (click)="addToNeeds(offer.id)">
+                    حجز الآن
+                    <i class="fas fa-clipboard-check"></i>
+                  </a>
+                  <p *ngIf="offer.id == 30 || offer.id==37 || offer.id == 32 || offer.id==31 || offer.id==48 || offer.id==34 || offer.id==53" class="float-left" style=" background-color: rgb(230, 109, 109);">
+                    محجــــوزة بالفعل
+                    <i class="fas fa-clipboard-check"></i>
+                  </p>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+         
+
+
+
+
         </div>
 
       </div>

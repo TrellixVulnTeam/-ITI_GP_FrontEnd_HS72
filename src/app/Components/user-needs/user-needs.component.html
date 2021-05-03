@@ -1,11 +1,14 @@
 
  
- <button class="btn btn-success ">
+ <!-- <button class="btn btn-success ">
   <h4>{{message}} Needs</h4>  
-</button>
-<br><br>
+</button> -->
+<div class="alert alert-primary text-center" role="alert">
+ فــى هــــذا القســـــم سوف تجــــد كل ماقمـــت باستـــعارته.
+</div>
+<!-- <br><br> -->
 
- <!-- *********** Offeres ******** -->
+ <!-- *********** Needs ******** -->
    <section id="offers">
      <div class="jumbotron">
      <div class="container">
@@ -38,8 +41,8 @@
                  المزيد
                  <i class="fas fa-angle-double-right" ></i>
                </a>
-               <a (click) = "func()"
-               href=""
+               <a (click) = "returnOffer(offer.id)"
+               [routerLink]="['/userneed']"
                  class="float-left"
                >
                  تراجٌــع عن الحجز
@@ -53,6 +56,6 @@
      </div>
      </div>
    </section>
-   <!-- *********** /end Offeres ******** -->
+   <!-- *********** /end Needs ******** -->
  
  
