@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { Emitters } from 'src/app/emitters/emitters';
 import { INeed } from 'src/app/interfaces/ineed';
 import { IOffer } from 'src/app/interfaces/ioffer';
 import { SharedService } from 'src/app/services/shared.service';
@@ -20,13 +18,8 @@ OfferList:any=[];
 
 NeedList:INeed[];
 
-message:"";
 
-authenticated = false;
-
-
-
-constructor(private service:SharedService , private http: HttpClient) { }
+constructor(private service:SharedService) { }
 
 ngOnChanges():void{
   // this.filteredOffers = this.service.getOfferbycatId(this.SelectedCatID);
@@ -41,28 +34,6 @@ ngOnChanges():void{
     this.offers = this.service.getAllOffers();
     this.refreshOfferList();
     this.refreshNeedList();
-
-
-    // *************** Loged in User *********************
-    this.http
-    .get("http://127.0.0.1:8000/api/user/", { withCredentials: true })
-    .subscribe(
-      (res: any) => {
-        // console.log(res);
-        console.log(res);
-        Emitters.authEmitter.emit(true);
-
-       
-      },
-      (err) => {
-        // console.log(err);
-
-        // this.message = "عليـــــــك تسجيل الدخـــــول";
-        Emitters.authEmitter.emit(false);
-      }
-    );
-
-    // *************************************************
 
   }
 

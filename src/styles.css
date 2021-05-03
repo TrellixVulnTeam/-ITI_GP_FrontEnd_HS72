@@ -245,13 +245,13 @@ body
 {
     padding-top: 40px;
     padding-bottom: 60px;
-    /* background-color: rgba(9,9,9,0.7); */
-    color: rgb(14, 13, 13);
+    background-color: rgba(9,9,9,0.7);
+    color: #DDD;
 }
 #Contact #contactus i
 {
     font-size: 40px;
-    /* color: rgb(10, 10, 10); */
+    color: #FFF;
 }
 #Contact #contactus .form-control
 {
@@ -275,7 +275,7 @@ body
 }
 #Contact #contactus hr
 {
-    border-top: 1px solid #0c3035;
+    border-top: 1px solid #0F302D;
 }
 #Contact #contactus #contacinfo
 {
@@ -297,8 +297,7 @@ body
 {
     font-size: 19px;
     list-style: none;
-    color: rgb(4, 57, 70);
-    
+    color: #fff;
 }
 #Contact #contactus #info-detail i.fa
 {
@@ -310,7 +309,6 @@ body
 #Contact #contactus #info-detail span
 {
     font-weight: bold;
-    color: rgb(22, 21, 21);
 }
 /***************************************************/
 @media (max-width: 767px)                                                /* phone & taplet */
@@ -330,8 +328,8 @@ body
 #Question #conts
 {
     padding: 40px;
-    /* background-color: rgba(99, 99, 99, 0.9); */
-    color: #161515;
+    background-color: rgba(99, 99, 99, 0.9);
+    color: #FFFFFF;
 }
 #Question #questioning h4
 {
@@ -343,13 +341,13 @@ body
 }
 #Question #questioning p,ol,h5
 {
-    color: #04567c;
+    color: #D3CC9E;
     font-size: 17px;
 }
 #Question #questioning i
 {
     font-size: 40px;
-    color: rgb(19, 108, 143);
+    color: #FFF;
 }
 #Question #questioning #makequestion
 {
